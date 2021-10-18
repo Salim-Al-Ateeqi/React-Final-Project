@@ -12,11 +12,12 @@ import NavLogo from "../assets/jam3iyat.png";
 import SignupButton from "./SignupButton";
 import SigninButton from "./SigninButton";
 import authStore from "../stores/authStore";
+import { observer } from "mobx-react";
 
 function MyNavbar() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" className="color">
         <Container fluid>
           <Navbar.Brand href="#home">
             <img
@@ -61,14 +62,14 @@ function MyNavbar() {
               />
               <Button variant="outline-light">Search</Button>
             </Form>
-            {/* authStore.user ? (<p>Welcome, {authStore.user.username}</p>) : (
-            <>
-              <SigninButton />
-              <SignupButton />
-            </>
-            ); MUST FIX HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/}
-            <SigninButton />
-            <SignupButton />
+            {authStore.user ? (
+              <p>Welcome, {authStore.user.username}</p>
+            ) : (
+              <>
+                <SigninButton />
+                <SignupButton />
+              </>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -76,4 +77,4 @@ function MyNavbar() {
   );
 }
 
-export default MyNavbar;
+export default observer(MyNavbar);

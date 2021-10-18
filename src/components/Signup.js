@@ -99,7 +99,6 @@ function Signup({ closeModal, isOpen }) {
           </button>
         </form>
       </Modal>
-      ); ;
     </div>
   );
 }

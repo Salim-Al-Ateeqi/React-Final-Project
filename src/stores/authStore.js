@@ -28,5 +28,5 @@ class AuthStore {
 }
 
 const authStore = new AuthStore();
-
+// need to add that it shows user without refresh
 export default authStore;

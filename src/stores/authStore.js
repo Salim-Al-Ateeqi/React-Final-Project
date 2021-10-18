@@ -8,6 +8,7 @@ class AuthStore {
   constructor() {
     makeAutoObservable(this);
   }
+
   signup = async (userData) => {
     try {
       await api.post("/signup", userData);

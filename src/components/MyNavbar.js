@@ -61,12 +61,14 @@ function MyNavbar() {
               />
               <Button variant="outline-light">Search</Button>
             </Form>
-            {/* authStore.user ? (<p>Hello, {authStore.user.username}</p>) : (
+            {/* authStore.user ? (<p>Welcome, {authStore.user.username}</p>) : (
             <>
               <SigninButton />
               <SignupButton />
             </>
             ); MUST FIX HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/}
+            <SigninButton />
+            <SignupButton />
           </Navbar.Collapse>
         </Container>
       </Navbar>

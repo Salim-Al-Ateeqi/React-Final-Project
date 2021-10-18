@@ -3,6 +3,17 @@ import { useState } from "react";
 import Modal from "react-modal";
 import authStore from "../stores/authStore";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
 function Signin({ closeModal, isOpen }) {
   const [user, setUser] = useState({
     username: "",
@@ -23,6 +34,7 @@ function Signin({ closeModal, isOpen }) {
       <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
+        style={customStyles}
         contentLabel="Signin Modal"
       >
         <h3>Signin</h3>

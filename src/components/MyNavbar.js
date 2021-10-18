@@ -64,10 +64,10 @@ function MyNavbar() {
             </Form>
             {authStore.user ? (
               <>
-                <h2>Welcome, {authStore.user.username}</h2>
-                <button onClick={authStore.signout} size="2em" color="red">
-                  Logout
-                </button>
+                <li>Welcome, {authStore.user.username}</li>
+                <Button onClick={authStore.signout} size="2em" color="red">
+                  Get Out
+                </Button>
               </>
             ) : (
               <>

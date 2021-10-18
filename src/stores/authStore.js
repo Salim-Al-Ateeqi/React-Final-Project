@@ -9,9 +9,15 @@ class AuthStore {
     makeAutoObservable(this);
   }
 
+  setUser = (token) => {
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
+    this.user = decode(token);
+  };
+
   signup = async (userData) => {
     try {
-      await api.post("/signup", userData);
+      const res = await api.post("/signup", userData);
+      this.setUser(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
     }
@@ -20,10 +26,15 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await api.post("/signin", userData);
-      this.user = decode(res.data.token);
+      this.setUser = decode(res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
     }
+  };
+
+  signout = () => {
+    delete api.defaults.headers.common.Authorization;
+    this.user = null;
   };
 }
 

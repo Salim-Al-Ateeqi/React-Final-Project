@@ -63,11 +63,16 @@ function MyNavbar() {
               <Button variant="outline-light">Search</Button>
             </Form>
             {authStore.user ? (
-              <p>Welcome, {authStore.user.username}</p>
+              <>
+                <h2>Welcome, {authStore.user.username}</h2>
+                <button onClick={authStore.signout} size="2em" color="red">
+                  Logout
+                </button>
+              </>
             ) : (
               <>
-                <SigninButton />
-                <SignupButton />
+                {" "}
+                <SigninButton /> <SignupButton />{" "}
               </>
             )}
           </Navbar.Collapse>

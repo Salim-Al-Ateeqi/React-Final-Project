@@ -12,17 +12,27 @@ function Jam3iyatItem({ jam3iya }) {
           style={{ height: "18rem" }}
         />
         <Card.Body style={{ height: "18rem" }}>
-          <Card.Title>{jam3iya.title}</Card.Title>
+          <Card.Title className="font">
+            <h4>{jam3iya.title}</h4>
+          </Card.Title>
           <Card.Text>
-            <div>Amount: {jam3iya.amount}</div>
-
-            <div>Limit: {jam3iya.limit}</div>
             <div>
-              Start Date:
+              <strong>Amount:</strong> {jam3iya.amount}
+            </div>
+
+            <div>
+              <strong>Limit:</strong> {jam3iya.limit}
+            </div>
+            <div>
+              <strong>Start Date: </strong>
               <Moment format="DD/MM/YYYY">{jam3iya.startDate}</Moment>
             </div>
             <div>
-              End Date: <Moment format="DD/MM/YYYY">{jam3iya.endDate}</Moment>
+              <strong>End Date: </strong>
+              <Moment format="DD/MM/YYYY">{jam3iya.endDate}</Moment>
+            </div>
+            <div>
+              <strong>Author:</strong> {jam3iya.author.username}
             </div>
           </Card.Text>
         </Card.Body>

@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Container, Button, Nav } from "react-bootstrap";
 import NavLogo from "../assets/jam3iyat.png";
 import SignupButton from "./SignupButton";
 import SigninButton from "./SigninButton";
@@ -29,53 +21,25 @@ function MyNavbar() {
             />{" "}
             Jam3iyat
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              <NavDropdown
-                title="Dropdown"
-                id="navbarScrollingDropdown"
-                menuVariant="dark"
-              >
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-light">Search</Button>
-            </Form>
+          <Nav>
             {authStore.user ? (
               <>
-                <li>Welcome, {authStore.user.username}</li>
-                <Button onClick={authStore.signout} size="2em" color="red">
-                  Get Out
+                <h4 className="margin">Welcome, {authStore.user.username}</h4>
+                <Button onClick={authStore.signout} variant="outline-danger">
+                  Sign Out
                 </Button>
               </>
             ) : (
               <>
-                {" "}
-                <SigninButton /> <SignupButton />{" "}
+                <label className="margin">
+                  <SigninButton />
+                </label>
+                <label className="margin">
+                  <SignupButton />
+                </label>
               </>
             )}
-          </Navbar.Collapse>
+          </Nav>
         </Container>
       </Navbar>
     </div>

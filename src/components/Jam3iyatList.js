@@ -7,7 +7,7 @@ function Jam3iyatList() {
   const jam3iyatList = jam3iyatStore.jam3iyat.map((jam3iya) => {
     return <Jam3iyatItem jam3iya={jam3iya} />;
   });
-  return <div>{jam3iyatList}</div>;
+  return <div className="list">{jam3iyatList}</div>;
 }
 
 export default observer(Jam3iyatList);

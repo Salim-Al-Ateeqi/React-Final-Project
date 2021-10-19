@@ -17,7 +17,14 @@ class Jam3iyatStore {
     }
   };
 
-  createJam3iyat = (newJam3iya) => {};
+  createJam3iyat = async (newJam3iya) => {
+    try {
+      const res = await api.post("/jam3ya", newJam3iya);
+      this.jam3iyat.push(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 const jam3iyatStore = new Jam3iyatStore();

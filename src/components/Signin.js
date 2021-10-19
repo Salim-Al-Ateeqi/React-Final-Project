@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
 import authStore from "../stores/authStore";
+import { Button } from "react-bootstrap";
 
 const customStyles = {
   content: {
@@ -60,9 +61,9 @@ function Signin({ closeModal, isOpen }) {
               onChange={handleChange}
             />
           </div>
-          <button className="btn float-right" type="submit">
+          <Button variant="outline-info" type="submit">
             Sign in
-          </button>
+          </Button>
         </form>
       </Modal>
     </div>

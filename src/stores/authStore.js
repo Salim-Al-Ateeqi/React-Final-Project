@@ -1,4 +1,4 @@
-import { makeObservable, observable, action, makeAutoObservable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import api from "./api";
 import decode from "jwt-decode";
 
@@ -6,15 +6,11 @@ class AuthStore {
   user = null;
 
   constructor() {
-    makeObservable(this, {
-      user: observable,
-      signin: action,
-      signout: action,
-    });
+    makeAutoObservable(this, {});
   }
 
   setUser = (token) => {
-    localStorage.setItem("key", token);
+    localStorage.setItem("myToken", token);
     api.defaults.headers.common.Authorization = `Bearer ${token}`;
     this.user = decode(token);
   };
@@ -38,20 +34,25 @@ class AuthStore {
   };
 
   signout = () => {
-    localStorage.removeItem("key");
     delete api.defaults.headers.common.Authorization;
+    localStorage.removeItem("myToken");
     this.user = null;
   };
 
   checkForToken = () => {
-    const token = localStorage.getItem("key");
+    const token = localStorage.getItem("myToken");
     if (token) {
-      this.setUser(token);
+      const currentTime = Date.now();
+      const user = decode(token);
+      if (user.exp >= currentTime) {
+        this.setUser(token);
+      } else {
+        this.signout();
+      }
     }
   };
 }
 
 const authStore = new AuthStore();
 authStore.checkForToken();
-// need to add that it shows user without refresh
 export default authStore;

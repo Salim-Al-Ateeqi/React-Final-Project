@@ -14,7 +14,7 @@ const customStyles = {
   },
 };
 
-const Jam3iyatModal = () => {
+function Jam3iyatModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
@@ -52,6 +52,6 @@ const Jam3iyatModal = () => {
       </Modal>
     </div>
   );
-};
+}
 
 export default Jam3iyatModal;

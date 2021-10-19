@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
 import authStore from "../stores/authStore";
+import Button from "react-bootstrap/Button";
 
 const customStyles = {
   content: {
@@ -16,8 +17,6 @@ const customStyles = {
 
 function Signup({ closeModal, isOpen }) {
   const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
     username: "",
     password: "",
     email: "",
@@ -52,28 +51,6 @@ function Signup({ closeModal, isOpen }) {
               onChange={handleChange}
             />
           </div>
-          <div className="form-group row">
-            <div className="col-6">
-              <label>First Name</label>
-              <input
-                name="firstName"
-                value={user.firstName}
-                type="text"
-                className="form-control"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="col-6">
-              <label>Last Name</label>
-              <input
-                name="lastName"
-                value={user.lastName}
-                type="text"
-                className="form-control"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
           <div className="form-group">
             <label>Email</label>
             <input
@@ -94,9 +71,13 @@ function Signup({ closeModal, isOpen }) {
               onChange={handleChange}
             />
           </div>
-          <button className="btn float-right" type="submit">
+          <Button
+            className="btn float-right"
+            type="submit"
+            variant="outline-success"
+          >
             Sign up
-          </button>
+          </Button>
         </form>
       </Modal>
     </div>

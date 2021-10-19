@@ -8,7 +8,7 @@ function Home() {
         alt="homeLogo"
       />
       <strong>
-        <h1>Jam3iyat</h1>
+        <h1 className="font">Jam3iyat</h1>
       </strong>
     </div>
   );

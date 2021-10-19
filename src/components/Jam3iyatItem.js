@@ -5,7 +5,7 @@ import Moment from "react-moment";
 function Jam3iyatItem({ jam3iya }) {
   return (
     <div className="item">
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem", borderRadius: "50px" }}>
         <Card.Img
           variant="top"
           src={jam3iya.image}
@@ -33,6 +33,9 @@ function Jam3iyatItem({ jam3iya }) {
             </div>
             <div>
               <strong>Author:</strong> {jam3iya.author.username}
+            </div>
+            <div>
+              <strong>Joined Users:</strong>
             </div>
           </Card.Text>
         </Card.Body>

@@ -6,7 +6,7 @@ class AuthStore {
   user = null;
 
   constructor() {
-    makeAutoObservable(this, {});
+    makeAutoObservable(this);
   }
 
   setUser = (token) => {

@@ -12,10 +12,6 @@ function Jam3iyatItem({ jam3iya }) {
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
-  const jam3iyatUsers = jam3iya.users.map((user) => {
-    return user.username;
-  });
-
   const handleJoin = (event) => {
     event.preventDefault();
     jam3iyatStore.joinJam3iya(jam3iya._id);

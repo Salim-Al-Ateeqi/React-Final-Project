@@ -1,7 +1,19 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(-45deg, #161c91, #4a4de7, #7ea6f4, #a0e4f1);
+  background: linear-gradient(
+    -45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
@@ -69,6 +81,8 @@ body {
   border-style: solid;
   border-color: black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 0.3s;
+  animation: ease-in-out;
 }
 
 .item img {

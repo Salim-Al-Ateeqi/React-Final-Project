@@ -6,6 +6,17 @@ import jam3iyatStore from "../stores/jam3iyatStore";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
 function UpdateModal({ closeModal, isOpen, _jam3iya }) {
   const [jam3iya, setJam3iya] = useState({
     title: _jam3iya.title,
@@ -29,8 +40,8 @@ function UpdateModal({ closeModal, isOpen, _jam3iya }) {
       <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
-        // style={customStyles}
-        contentLabel="Signin Modal"
+        style={customStyles}
+        contentLabel="Update Modal"
       >
         <h3>Jam3iya Update Form</h3>
         <form onSubmit={handleUpdate}>

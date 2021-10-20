@@ -3,16 +3,11 @@ body {
   height: 100vh;
   background: linear-gradient(
     -45deg,
-    #405de6,
-    #5851db,
-    #833ab4,
-    #c13584,
-    #e1306c,
-    #fd1d1d,
-    #f56040,
-    #f77737,
-    #fcaf45,
-    #ffdc80
+    #161c91,
+    #4a4de7,
+    #7ea6f4,
+    #a0e4f1,
+    #f1fafb
   );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -75,8 +70,6 @@ body {
   flex-flow: row wrap;
   height: 100vh;
   width: 100vw;
-  border-style: solid;
-  border-color: black;
   overflow: scroll;
   scrollbar-width: none;
 }
@@ -114,4 +107,11 @@ body {
 
 .font {
   font-family: "Righteous", cursive;
+}
+
+.searchBar {
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 3px;
 }

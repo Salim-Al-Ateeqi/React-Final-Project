@@ -13,7 +13,7 @@ const CreateJam3iyaButton = () => {
   return (
     <>
       {authStore.user && (
-        <Button variant="outline-dark" onClick={openModal}>
+        <Button variant="outline-light" onClick={openModal}>
           Create a Jam3iya!
         </Button>
       )}

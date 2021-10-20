@@ -5,6 +5,8 @@ import SignupButton from "./SignupButton";
 import SigninButton from "./SigninButton";
 import authStore from "../stores/authStore";
 import { observer } from "mobx-react";
+import CreateJam3iya from "./CreateJam3iya";
+import CreateJam3iyaButton from "./CreateJam3iyaButton";
 
 function MyNavbar() {
   return (
@@ -22,6 +24,7 @@ function MyNavbar() {
             Jam3iyat
           </Navbar.Brand>
           <Nav>
+            <CreateJam3iyaButton />
             {authStore.user ? (
               <>
                 <h4 className="margin">Welcome, {authStore.user.username}</h4>

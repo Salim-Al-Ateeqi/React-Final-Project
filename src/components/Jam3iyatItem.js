@@ -52,7 +52,7 @@ function Jam3iyatItem({ jam3iya }) {
             </div>
             <ModalFooter />
             <MoreInfoModal jam3iya={jam3iya} />
-            {authStore.user._id === jam3iya.author._id && (
+            {authStore.user?._id === jam3iya.author._id && (
               <>
                 <Button
                   variant="outline-secondary"

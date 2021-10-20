@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-modal";
+import jam3iyatStore from "../stores/jam3iyatStore";
 
 const customStyles = {
   content: {
@@ -24,10 +25,19 @@ function MoreInfoModal({ jam3iya, user }) {
     return user.username;
   });
 
+  const handleJoin = (event) => {
+    event.preventDefault();
+    jam3iyatStore.joinJam3iya(jam3iya._id);
+  };
+  const handleLeave = (event) => {
+    event.preventDefault();
+    jam3iyatStore.leaveJam3iya(jam3iya._id);
+  };
+
   return (
     <>
       <Button variant="outline-info" onClick={openModal}>
-        More Info.
+        More Info
       </Button>
       <Modal
         isOpen={isOpen}
@@ -49,6 +59,12 @@ function MoreInfoModal({ jam3iya, user }) {
           <strong>Joined Users: </strong>
           {jam3iyatUsers + ""}
         </div>
+        <Button variant="outline-success" onClick={handleJoin} type="submit">
+          Join
+        </Button>
+        <Button variant="outline-warning" onClick={handleLeave} type="submit">
+          Leave
+        </Button>
       </Modal>
     </>
   );

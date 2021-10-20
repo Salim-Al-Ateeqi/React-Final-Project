@@ -5,7 +5,6 @@ import SignupButton from "./SignupButton";
 import SigninButton from "./SigninButton";
 import authStore from "../stores/authStore";
 import { observer } from "mobx-react";
-import CreateJam3iya from "./CreateJam3iya";
 import CreateJam3iyaButton from "./CreateJam3iyaButton";
 
 function MyNavbar() {
